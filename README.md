@@ -4,6 +4,9 @@ Match against multiple regexes simultaneously, and then tell you which one
 matched, without leaving the familiarity of regexes for a more sophisticated
 parser like [instaparse] or ANTLR4.
 
+This assumes all your regexes are mutually exclusive, i.e. it will only return
+one match.
+
 [instaparse]: https://github.com/Engelberg/instaparse
 
 ## Installation
