@@ -1,0 +1,13 @@
+{:paths ["src" "resources"]
+ :deps
+ {org.clojure/clojure {:mvn/version "1.11.1"}
+  lambdaisland/regal {:mvn/version "0.1.175"}
+  eidolon/eidolon {:mvn/version "0.2.0"}
+  com.rpl/specter {:mvn/version "1.1.4"}
+  instaparse/instaparse {:mvn/version "1.4.12"}}
+ :aliases
+ {:test
+  {:main-opts ["-m" "kaocha.runner"]
+   :extra-paths ["test"]
+   :extra-deps
+   {lambdaisland/kaocha {:mvn/version "1.88.1376"}}}}}
