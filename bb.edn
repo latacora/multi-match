@@ -1,0 +1,8 @@
+{:tasks
+ {test
+  {:doc "Run tests, passing additional arguments to kaocha"
+   :task (apply clojure "-M:test" *command-line-args*)}
+
+  maint
+  {:doc "Check for outdated dependencies using antq"
+   :task (shell "clojure -Sdeps '{:deps {com.github.liquidz/antq {:mvn/version \"RELEASE\"}}}' -M -m antq.core")}}}
