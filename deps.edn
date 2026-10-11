@@ -6,7 +6,20 @@
   com.rpl/specter {:mvn/version "1.1.6"}
   instaparse/instaparse {:mvn/version "1.5.0"}}
  :aliases
- {:test
+ {:hyperscan
+  {:extra-paths ["dev"]
+   :extra-deps {com.gliwka.hyperscan/hyperscan {:mvn/version "5.4.11-3.1.0"}}
+   :jvm-opts ["--enable-native-access=ALL-UNNAMED"]
+   :main-opts ["-m" "hyperscan-experiment"]}
+  :hyperscan-bench
+  {:extra-deps {criterium/criterium {:mvn/version "0.4.6"}}
+   :jvm-opts ["-Xms512m" "-Xmx512m"]
+   :main-opts ["-m" "hyperscan-bench"]}
+  :property-test
+  {:extra-paths ["test-generative"]
+   :extra-deps {org.clojure/test.check {:mvn/version "1.1.1"}}
+   :main-opts ["-m" "prefix-properties"]}
+  :test
   {:main-opts ["-m" "kaocha.runner"]
    :extra-paths ["test"]
    :extra-deps
